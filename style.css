@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #ffbfd2, #fff0f5);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 20px;
+  color: #b30059;
+  font-size: 2.5em;
+}
+
+.photo-container {
+  margin-top: 20px;
+}
+
+.photo-container img {
+  width: 250px;
+  height: 250px;
+  max-width: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ff66a3;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+.audio-player {
+  margin-top: 30px;
+}
+
+.audio-player audio {
+  width: 90%;
+  max-width: 400px;
+}
+
+.message {
+  margin-top: 20px;
+  color: #99004d;
+  font-size: 1.5em;
+  font-style: italic;
+  padding: 0 10px;
+}
+
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  transform: rotate(45deg);
+  animation: float 8s infinite ease-in;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .message {
+    font-size: 1.2em;
+  }
+}
